@@ -1,0 +1,51 @@
+﻿@page
+@model BloggingSite_RazorPages_StoredProcedure.Pages.IndexPagesModel
+@{
+}
+@using Microsoft.AspNetCore.Http;
+
+<h2 class="text-primary"></h2>
+
+<div class=" row m-2 p-2">
+    <div class="col-9">
+        <h2 class="text-primary">Blogger Sites</h2>
+    </div>
+    <div class="col-3">
+        <a asp-page="Posts" class="btn btn-info m-2 p-2">Create New Blog</a>
+    </div>
+</div>
+
+<div class="container row p-2 m-2">
+    <table class="table table-bordered table-striped table-active">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>UserName</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.postList)
+            {
+                @if (item.UserId == Convert.ToInt32(HttpContext.Session.GetInt32("ID")))
+                {
+                    <tr>
+                        <td>@item.Title</td>
+
+                        <td>@item.Description</td>
+                        <td>@item.UserName</td>
+                        <td>
+
+                            <a asp-page="PostEdit" asp-route-id="@item.PostId" class="btn btn-info">EditBlog</a>
+                            <br />
+                            <br />
+                            <a asp-page="DeletePosts" asp-route-id="@item.PostId" class="btn btn-danger">DeleteBlog</a>
+                        </td>
+                    </tr>
+                }
+
+            }
+        </tbody>
+    </table>
+</div>

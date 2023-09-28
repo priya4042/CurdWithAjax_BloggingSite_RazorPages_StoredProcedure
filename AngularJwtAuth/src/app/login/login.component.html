@@ -1,0 +1,36 @@
+
+<div class="row">
+  <div class="col-6 mx-auto">
+      <div class="card mt-4">
+              <!-- Header -->
+              <div class="card-header">
+                  <h3 class="text-primary text-center">Login</h3>
+              </div>
+  
+              <!-- Body -->
+                  <div class="card-body">
+                      <div class="form-group row">
+                        <label for="txtuname" class="col-md-4">Username</label>  
+                        <div class="col-md-8">
+                          <input type="text" [(ngModel)]="userlogin.username" id="txtuname" placeholder="Username" name="Uname" class="form-control"/>
+                        </div>    
+                      </div>
+                      <div class="form-group row">
+                          <label for="txtupass" class="col-md-4">Password</label>  
+                          <div class="col-md-8">
+                            <input type="password" [(ngModel)]="userlogin.password"  id="txtupass" placeholder="Password" name="Upass" class="form-control"/>
+                            
+                            
+                            
+                          </div>    
+                        </div>
+                  </div>
+              <!-- Footer -->
+              <div class="card-footer text-right">
+                  <h6 class="text-left text-danger">{{loginError}}</h6>
+                  <button class="btn btn-success" (click)="onLoginClick($event)">Login</button>
+              </div>
+      </div>
+  </div>
+  </div>
+  

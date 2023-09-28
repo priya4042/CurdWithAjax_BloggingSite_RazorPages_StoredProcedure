@@ -1,0 +1,44 @@
+﻿@page
+@model BloggingSite_RazorPages_StoredProcedure.Pages.ProfileModel
+@{
+}
+
+<h2>My Profile</h2>
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<form asp-page-handler="Profile"  class="container mt-5">
+    @*@foreach (var item in Model.register)
+    {*@
+
+
+    <form>
+
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">First Name</label>
+            <input asp-for="@Model.register.FirstName" class="form-control" />
+
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">Last Name</label>
+            <input asp-for="@Model.register.LastName" class="form-control" />
+
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="inputAddress">Email</label>
+            <input asp-for="@Model.register.Email" class="form-control" />
+
+        </div>
+        <a asp-page="ProfileEdit" asp-route-id="@Model.register.Id" class="btn btn-info">Edit Profile</a>
+        <br />
+        <br />
+        <a asp-page="./Blog">Back to List</a>
+
+
+    </form>
+    
+
+</form>
+

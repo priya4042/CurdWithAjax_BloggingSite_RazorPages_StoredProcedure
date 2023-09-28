@@ -1,0 +1,22 @@
+﻿@page
+@model BloggingSite_RazorPages_StoredProcedure.Pages.BlogModel
+@{
+}
+
+
+@*//With this loop it shows us all user posts*@
+@foreach (var item in Model.postList)
+{
+<div class="card text-center">
+    <div class="card-header">
+        @item.Title
+    </div>
+    <div class="card-body">
+        <p class="card-text">@item.Description</p>
+    </div>
+    <div class="card-footer text-muted">
+        @item.UserName; @item.CreatedOn
+    </div>
+</div>
+<br/>
+}

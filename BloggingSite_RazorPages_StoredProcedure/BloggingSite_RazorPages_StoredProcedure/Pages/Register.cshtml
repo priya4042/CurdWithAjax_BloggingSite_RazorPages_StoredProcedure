@@ -1,0 +1,47 @@
+﻿@page
+@model BloggingSite_RazorPages_StoredProcedure.Pages.RegisterModel
+@{
+    Layout = "";
+}
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<form asp-page-handler="Register" method="post" class="container mt-5">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">First Name</label>
+            @Html.TextBoxFor(model => model.register.FirstName, new { @class = "form-control", @id = "Fname" })
+            <span asp-validation-for="@Model.register.FirstName" class="text-danger"></span>
+
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">Last Name</label>
+            @Html.TextBoxFor(model => model.register.LastName, new { @class = "form-control", @id = "Lname" })
+            <span asp-validation-for="@Model.register.LastName" class="text-danger"></span>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputAddress">Email</label>
+        @Html.TextBoxFor(model => model.register.Email, new { @class = "form-control", @id = "email" })
+        <span asp-validation-for="@Model.register.Email" class="text-danger"></span>
+
+    </div>
+    <div class="form-group">
+        <label for="inputAddress2">Password</label>
+        @Html.PasswordFor(model => model.register.Password, new { @class = "form-control", @id = "password" })
+        <span asp-validation-for="@Model.register.Password" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="inputAddress2">Confirm Password</label>
+        @Html.PasswordFor(model => model.register.ConfirmPassword, new { @class = "form-control", @id = "Cpassword" })
+        <span asp-validation-for="@Model.register.ConfirmPassword" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Register</button>
+        <a href="/Login" class="btn btn-secondary">Login</a>
+    </div>
+</form>
+

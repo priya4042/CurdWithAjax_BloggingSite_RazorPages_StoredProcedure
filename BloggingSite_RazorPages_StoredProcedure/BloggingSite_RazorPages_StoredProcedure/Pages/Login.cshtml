@@ -1,0 +1,31 @@
+﻿@page
+@model BloggingSite_RazorPages_StoredProcedure.Pages.LoginModel
+@{
+    Layout = "";
+}
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<style>
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem;
+    }
+</style>
+<form asp-page-handler="Login" method="post">
+    <div class="form-group col-md-6">
+        <label for="inputAddress">Email</label>
+        @Html.TextBoxFor(model => model.register.Email, new { @class = "form-control", @id = "email" })
+    </div>
+    <div class="form-group col-md-6">
+        <label for="inputAddress2">Password</label>
+        @Html.PasswordFor(model => model.register.Password, new { @class = "form-control", @id = "password" })
+    </div>
+    <div class="form-group col-md-6">
+        <button type="submit" class="btn btn-primary ">Login</button>
+        <a href="/Register" class="btn btn-secondary">Create Account</a>
+</div>
+</form>

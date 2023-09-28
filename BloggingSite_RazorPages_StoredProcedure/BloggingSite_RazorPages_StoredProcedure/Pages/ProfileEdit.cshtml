@@ -1,0 +1,54 @@
+﻿@page
+@model BloggingSite_RazorPages_StoredProcedure.Pages.ProfileEditModel
+@{
+}
+
+<form asp-page-handler="ProFileEdit" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="register.Id" />
+
+    <div class="container rounded border ">
+        <div class="form-group row p-2 m-2">
+            <div class="col-3">
+                <label asp-for="register.FirstName"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="register.FirstName" class="form-control" />
+                <span asp-validation-for="register.FirstName" class="text-danger"></span>
+            </div>
+
+
+        </div>
+
+        <div class="form-group row p-2 m-2">
+            <div class="col-3">
+                <label asp-for="register.LastName"></label>
+            </div>
+            <div class="col-6">
+                
+                <input asp-for="register.LastName" class="form-control" />
+                <span asp-validation-for="register.LastName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row p-2 m-2">
+            <div class="col-3">
+                <label asp-for="register.Email"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="register.Email" class="form-control" />
+                <span asp-validation-for="register.Email" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row p-2 m-2">
+            <div class="col-3 offset-3">
+                <input type="submit" value="Update" class="btn btn-outline-primary form-control" />
+            </div>
+            <div class="col-3">
+                <a asp-page="./Profile" class="btn btn-outline-danger form-control">Back To List</a>
+
+
+            </div>
+        </div>
+    </div>
+</form>

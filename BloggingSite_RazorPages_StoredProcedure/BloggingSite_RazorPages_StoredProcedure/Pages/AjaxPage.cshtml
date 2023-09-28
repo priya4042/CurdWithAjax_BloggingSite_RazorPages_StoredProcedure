@@ -1,0 +1,77 @@
+﻿@page
+@model BloggingSite_RazorPages_StoredProcedure.Pages.AjaxPageModel
+@{
+
+}
+
+
+<button class="btn btn-sm btn-primary m-2" id="addBlogs">Add Blogs</button>
+<table class="table table-bordered table-striped table-active">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody id="tbl_data">
+    </tbody>
+</table>
+
+
+
+
+<div class="madal fade modal" id="BlogModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="text-info modal-title" id="Heading">Add blog</h1>
+                <button class="close text-danger" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form method="post">
+                    <div><input type="hidden" id="BlogId"/></div>
+                        <div class="form-group">
+                            <label>title</label>
+                            <input type="text" placeholder="title" class="form-control" id="title" autocomplete="off" />
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea placeholder="description" id="descri" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>UserName</label>
+                            <input type="text" placeholder="User" class="form-control" id="user" autocomplete="off" />
+                        </div>
+                    </form>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="addbloges();" id="addbloges">Save</button>
+                <button class="btn btn-warning" onclick="UpdateBlog();" id="btnUpdate" style="display:none">Update</button>
+                <button class="btn btn-danger btn-default" data-dismiss="modal" >Close</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+@section scripts{
+
+    
+    <script src="~/js/ajax.js"></script>
+}
+@*<script>
+    $(document).ready(function () {
+        ckeditor.replace('#Description');
+       // <button class="btn btn-primary" type="submit" asp-action="Create" asp-controller="CheckEditor">Save</button>
+
+    })
+</script>*@
